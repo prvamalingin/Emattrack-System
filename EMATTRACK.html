@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMATTRACK</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        
+        nav {                 /*Fixed Navigation(very top)*/
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;        
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            position: fixed;        /*Fixed Navigation(very top)*/
+            background-color: rgba(0, 0, 0, 0.9);
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: skyblue;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-section {                     /*HOME SECTION*/
+            background-image: url('C:/Users/Prince/Downloads/1231231232.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .main-title {
+            font-size: 80px;
+            letter-spacing: 10px;
+            text-shadow: 4px 4px 15px rgba(0,0,0,0.8);
+        }
+
+        .view-section {                   /* 2. ATTENDANCE LOGS SECTION */
+            background-color: #2c3e50;
+            color: #000000;
+        }
+
+        .view-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #33cccc81;
+        }
+
+        table {
+            width: 80%;
+            max-width: 800px;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #33CCCC;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff5f5;
+        }
+
+        .attendance-section {                     /*attendance*/
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .box {
+            background-color: rgba(135, 206, 235, 1);
+            padding: 40px;
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box h2 { color: #222; margin-bottom: 20px; font-size: 22px; }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .about-section {                    /*about us section*/
+            background-color: #a9a9a9;
+            height: auto;
+            padding: 100px 20px;
+        }
+
+        .about-content { max-width: 800px; }
+
+        footer {                     /*footer*/
+            padding: 60px 20px;
+            background: #1a1a1a;
+            color: white;
+            text-align: left;   
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#view-attendance">Attendance</a>
+        <a href="#attendance">Log Attendance</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <h1 class="main-title">DEFENDED!</h1>
+    </section>
+
+    <section id="view-attendance" class="view-section">
+        <h2>Attendance Logs</h2>
+        <table>
+            <thead> 
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Date</th>
+                    <th>Time In</th>
+                    <th>Time Out</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>20241</td>
+                    <td>04  -09-2026</td>
+                    <td>08:00 AM</td>
+                    <td>05:00 PM</td>
+                </tr>
+                <tr>
+                    <td>20242</td>
+                    <td>04-09-2026</td>
+                    <td>08:15 AM</td>
+                    <td>05:30 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="attendance" class="attendance-section">
+        <div class="box">
+            <h2>Employee Login</h2>
+            <input type="text" id="empInput" placeholder="Enter Employee ID">
+            <select>
+                <option>Time In</option>
+                <option>Time Out</option>
+            </select>
+            <button type="button" onclick="document.getElementById('empInput').value = ''">Login</button>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>
+                EMATTRACK is designed for ease of use, ensuring that attendance 
+                tracking improves operational efficiency by replacing paper logs with a real-time system.
+                It focuses on centralizing work-hour data to streamline payroll processing and ensure data accuracy.
+            </p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h3>Contact Us</h3>
+        <p>Email: emattrack@gmail.com | Phone: +639 12 345 6789</p>
+        <p>&copy; 2026 EMATTRACK System</p>
+    </footer>
+</body>
+</html>
